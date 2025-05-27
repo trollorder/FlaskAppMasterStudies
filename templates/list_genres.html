@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Genres</h1>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        {% for genre in genres %}
+            <div style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; padding: 20px; background-color: #fff; width: 200px; text-align: center;">
+                <h3 style="margin: 0;">{{ genre }}</h3>
+                <button onclick="location.href='/topmovies/{{ genre }}'" style="margin-top: 10px; padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">View Top Movies in Genre</button>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

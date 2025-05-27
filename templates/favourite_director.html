@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Favourite Director</h2>
+    </div>
+    <div class="card-body">
+        <p>Name: {{ director.name }}</p>
+        <p>Count of Movies {{director.count}}</p>
+    </div>
+</div>
+{% endblock %}

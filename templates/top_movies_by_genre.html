@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Top 10 Movies by Genre</h1>
+
+<div>
+    <h2>Your Favorite Genre: {{ genre }}</h2>
+    <button onclick="window.history.back()" style="background-color: #007BFF; color: white; border-radius: 10px; border: 0%; border-color: 007BFF; padding-top: 10px; padding: 20px; box-shadow: 10dp;">Back</button>
+    <ul>
+        {% for movie in movies %}
+        <li>{{ movie.title }} ({{ movie.year }})</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

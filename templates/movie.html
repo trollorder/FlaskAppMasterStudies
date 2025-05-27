@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Movie Details{% endblock %}
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+<div style="width: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;"></div>
+        <button onclick="window.history.back();" style="margin: 20px; padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">Back</button>
+    <button onclick="location.reload();" style="margin: 20px; padding: 10px 20px; font-size: 16px; background-color: #28A745; color: white; border: none; border-radius: 5px; cursor: pointer;">Get New Movie</button>
+    <div class="movie-card" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+        <h2 style="font-size: 24px; color: #333; margin-bottom: 10px;">{{ movie.title }}</h2>
+        <p style="margin: 5px 0; font-family: Calibri, sans-serif;"><strong>Genre:</strong> <span style="color: #555;">{{ movie.genre }}</span></p>
+        <p style="margin: 5px 0;"><strong>Release Year:</strong> <span style="color: #555;">{{ movie.year }}</span></p>
+        <p style="margin: 5px 0;"><strong>Description:</strong></p>
+        <p>{{ movie.description }}</p>
+        <img src="{{ movie.poster_url }}" alt="{{ movie.title }}" style="width: 100%; border-radius: 8px; margin-top: 15px;">
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} IMDB Reviews {% endblock %}</title>
+        <header>
+            <nav style="background-color: #000; padding: 10px 0;">
+            <ul style="list-style: none; display: flex; justify-content: center; align-items: center; margin: 0; padding: 0; flex-wrap: wrap;">
+                <li style="margin: 10px;"><a href="/list-genres" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">List Genres</a></li>
+                <li style="margin: 10px;"><a href="/movie" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Random Movie</a></li>
+                <li style="margin: 10px;"><a href="/movies" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Movies</a></li>
+                <li style="margin: 10px;"><a href="/" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Home</a></li>
+                <li style="margin: 10px;"><a href="/favourite-director" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Favourite Director</a></li>
+                <li style="margin: 10px;"><a href="/favourite-actor" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Favourite Actor</a></li>
+                <li style="margin: 10px;"><a href="/topmovies/action" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Top Movies in Genre</a></li>
+            </ul>
+            </nav>
+        </header>
+        <style>
+            header nav ul li a:hover {
+            color: #f0a500;
+            }
+            @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+            header nav ul li {
+                margin: 5px 0;
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{% block header %} Default Header {% endblock %}</h1>
+        <p>{% block content %} Default Content {% endblock %}</p>
+        <footer footer>
+            <p style="text-align: center; font-weight: bold; font-size: 24px; background-color: black; color: white; width: 100%; padding: 10px 0;"></p>{% block footer %} IMDB Movies {% endblock %}</p>
+        </footer>
+    </body>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</html>
