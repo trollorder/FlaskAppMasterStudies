@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block header %}Manage Movies{% endblock %}
+
+{% block content %}
+<div style="text-align: center;">
+    <table style="width: 80%; margin: auto; border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Release Year</th>
+                <th>Poster</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies[:100] %}
+            <tr style="height: 5vh; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                <td>{{ movie.id }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.genre }}</td>
+                <td>{{ movie.year }}</td>
+                <td>
+                    <img src="{{ movie.poster_url }}" alt="Poster" style="width: 50px; height: auto;">
+                </td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

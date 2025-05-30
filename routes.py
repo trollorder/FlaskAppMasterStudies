@@ -9,15 +9,50 @@ def register_routes(app,db):
     def home():
         return render_template('home.html')
 
+    # Get a Random Movie
     @app.route('/movie', methods=['GET'])
     def movie():
         movie = Movie.query.order_by(func.random()).first()
         return render_template('movie.html', movie=movie)
 
+    # Get 10 Random Movies
     @app.route('/movies', methods=['GET'])
     def top_movies():
         movies = Movie.query.order_by(func.random()).limit(10).all()
         return render_template('movies.html', movies=movies)
+    
+    @app.route('/add-movie', methods=['GET','POST'])
+    def add_movie():
+        if request.method == 'POST':
+            data = request.form
+            new_movie = Movie(
+                poster_url=data.get('poster_url'),
+                title=data.get('title'),
+                year=int(data.get('year')),
+                certificate=data.get('certificate'),
+                genre=data.get('genre'),
+                rating=float(data.get('rating')),
+                metascore=float(data.get('metascore')),
+                director=data.get('director'),
+                cast=data.get('cast'),
+                votes=int(data.get('votes').replace(',', '')),
+                description=data.get('description'),
+                review_count=int(data.get('review_count').replace(',', '')),
+                review_title=data.get('review_title'),
+                review=data.get('review')
+            )
+            db.session.add(new_movie)
+            db.session.commit()
+            return jsonify({'message': 'Movie added successfully!'}), 201
+        # If GET request, render the add movie form
+        if request.method == 'GET':
+            # Render the add movie form
+            return render_template('add_movie.html')
+    
+    @app.route('/manage-movies', methods=['GET'])
+    def manage_movies():
+        movies = Movie.query.all()
+        return render_template('manage_movies.html', movies=movies)
     
     @app.route('/favourite-director', methods=['GET'])
     def favorite_director():
@@ -31,34 +66,6 @@ def register_routes(app,db):
         return render_template('favourite_director.html', director=favourite_dict)
     
 
-    @app.route('/favourite-actor', methods=['GET'])
-    def favorite_actor():
-        all_actors = []
-
-        movie_casts = db.session.query(Movie.cast).all()
-
-        for movie_cast_tuple in movie_casts:
-            movie_cast_string = movie_cast_tuple[0]
-            if movie_cast_string:  # Check if the string is not None or empty
-                actors = movie_cast_string.split(',')
-                for actor in actors:
-                    all_actors.append(actor.strip())  # Remove leading/trailing spaces
-
-        from collections import Counter
-        actor_counts = Counter(all_actors)
-
-        if actor_counts:
-            favorite_actor, count = actor_counts.most_common(1)[0]
-        else:
-            favorite_actor = "No actors found"
-            count = 0
-
-        favourite_dict = {
-            'name': favorite_actor,
-            'count': count
-        }
-        return render_template('favourite_actor.html', actor=favourite_dict)
-
         
     @app.route('/topmovies/<string:genre>', methods=['GET'])
     def top_movies_by_genre(genre):
@@ -70,7 +77,11 @@ def register_routes(app,db):
     def list_genres():
         # Get all unique genres
         genres = db.session.query(Movie.genre).distinct().all()
-        genre_list = [genre[0] for genre in genres]
+        genre_list = []
+        for genre in genres:
+            if genre[0]:  # Check if the genre is not None or empty
+                genre_list.extend([g.strip() for g in genre[0].split(',')])
+        genre_list = list(set(genre_list))  # Remove duplicates
         return render_template('list_genres.html', genres=genre_list)
 
     # Seed Movies from CSV
@@ -79,7 +90,7 @@ def register_routes(app,db):
         import csv
         with open('imdb-movies-dataset.csv', 'r', encoding='utf-8') as file:
             reader = list(csv.DictReader(file))
-            for row in reader[:100]:  # Limit to 100 rows for seeding
+            for row in reader[:5000]:  # Limit to 1000 rows for seeding
                 # Check if the movie already exists
                 existing_movie = Movie.query.filter_by(title=row['Title'], year=int(row['Year'])).first()
                 if existing_movie:

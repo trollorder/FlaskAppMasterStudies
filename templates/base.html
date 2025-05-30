@@ -8,12 +8,10 @@
             <ul style="list-style: none; display: flex; justify-content: center; align-items: center; margin: 0; padding: 0; flex-wrap: wrap;">
                 <li style="margin: 10px;"><a href="/list-genres" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">List Genres</a></li>
                 <li style="margin: 10px;"><a href="/movie" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Random Movie</a></li>
-                <li style="margin: 10px;"><a href="/movies" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Movies</a></li>
+                <li style="margin: 10px;"><a href="/movies" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Random 10 Movies</a></li>
                 <li style="margin: 10px;"><a href="/" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Home</a></li>
-                <li style="margin: 10px;"><a href="/favourite-director" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Favourite Director</a></li>
-                <li style="margin: 10px;"><a href="/favourite-actor" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Favourite Actor</a></li>
-                <li style="margin: 10px;"><a href="/topmovies/action" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Top Movies in Genre</a></li>
-            </ul>
+                <li style="margin: 10px;"><a href="/add-movie" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Add Movie</a></li>
+                <li style="margin: 10px;"><a href="/manage-movies" style="color: wheat; text-decoration: none; font-size: 16px; transition: color 0.3s;">Manage Movies</a></li>
             </nav>
         </header>
         <style>
@@ -30,11 +28,12 @@
             }
         </style>
     </head>
-    <body>
+    <body style="justify-content: center; align-items: center; text-align: center; min-height: 100vh;">
         <h1>{% block header %} Default Header {% endblock %}</h1>
         <p>{% block content %} Default Content {% endblock %}</p>
-        <footer footer>
-            <p style="text-align: center; font-weight: bold; font-size: 24px; background-color: black; color: white; width: 100%; padding: 10px 0;"></p>{% block footer %} IMDB Movies {% endblock %}</p>
+        <footer>
+            <p style="text-align: center; font-weight: bold; font-size: 24px; background-color: black; color: white; width: 100%; padding: 10px 0;">{% block footer %} IMDB Movies {% endblock %}</p>
+            <p style="text-align: center; font-size: 12px; color: gray;">&copy; 2025 IMDB Reviewer. All rights reserved.</p>
         </footer>
     </body>
     <link rel="stylesheet" href="../static/css/styles.css">

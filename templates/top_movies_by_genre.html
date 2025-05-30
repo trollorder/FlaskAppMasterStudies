@@ -8,7 +8,29 @@
     <button onclick="window.history.back()" style="background-color: #007BFF; color: white; border-radius: 10px; border: 0%; border-color: 007BFF; padding-top: 10px; padding: 20px; box-shadow: 10dp;">Back</button>
     <ul>
         {% for movie in movies %}
-        <li>{{ movie.title }} ({{ movie.year }})</li>
+        <li>
+            <div style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; max-width: 50%;"> 
+                <div style="display: flex; align-items: center; flex-direction: column;">
+                    <img src="{{ movie.poster_url }}" alt="Poster of {{ movie.title }}" style="width: 100px; height: auto; border-radius: 5px; margin-bottom: 15px;">
+                    <div style="text-align: center;">
+                        <h3 style="margin: 0;">{{ movie.title }} ({{ movie.year }})</h3>
+                        <p style="margin: 5px 0;"><strong>Certificate:</strong> {{ movie.certificate }}</p>
+                        <p style="margin: 5px 0;"><strong>Genre:</strong> {{ movie.genre }}</p>
+                        <p style="margin: 5px 0;"><strong>Rating:</strong> {{ movie.rating }}</p>
+                        <p style="margin: 5px 0;"><strong>Metascore:</strong> {{ movie.metascore }}</p>
+                    </div>
+                </div>
+                <div style="margin-top: 10px; text-align: center;"></div>
+                    <p style="margin: 5px 0;"><strong>Director:</strong> {{ movie.director }}</p>
+                    <p style="margin: 5px 0;"><strong>Cast:</strong> {{ movie.cast }}</p>
+                    <p style="margin: 5px 0;"><strong>Votes:</strong> {{ movie.votes }}</p>
+                    <p style="margin: 5px 0;"><strong>Description:</strong> {{ movie.description }}</p>
+                    <p style="margin: 5px 0;"><strong>Review Count:</strong> {{ movie.review_count }}</p>
+                    <p style="margin: 5px 0;"><strong>Review Title:</strong> {{ movie.review_title }}</p>
+                    <p style="margin: 5px 0;"><strong>Review:</strong> {{ movie.review }}</p>
+                </div>
+            </div>
+        </li>
         {% endfor %}
     </ul>
 </div>
