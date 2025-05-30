@@ -11,8 +11,7 @@ This is a basic Flask application for IMDB Movies
 
 1. Clone the repository:
     ```bash
-    git clone <repository_url>
-    cd <repository_folder>
+    git clone https://github.com/trollorder/FlaskAppMasterStudies.git
     ```
 
 2. Install dependencies:
