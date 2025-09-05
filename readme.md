@@ -57,6 +57,11 @@ Admin
 - There are 5000 movies in the database, display it 100 by 100 at one time
 - Ensure the Table can be sorted and filtered 
 
+## Tests 
+```bash
+py test_script.py
+```
+
 
 ## DB Commands
 ``` bash
