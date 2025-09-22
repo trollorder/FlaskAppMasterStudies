@@ -1,10 +1,10 @@
 # Flask App
 
-This is a basic Flask application for IMDB Movies
+This is a basic Flask application for IMDB Movies for user studies in a full stack manipulation task
 
 ## Requirements
 
-- Python 3.11
+- Python 3.11 ++
 - Flask
 
 ## Installation
@@ -21,17 +21,12 @@ This is a basic Flask application for IMDB Movies
 
 ## Running the Application
 
-1. Set the `FLASK_APP` environment variable:
-    ```bash
-    export FLASK_APP=app.py
-    ```
-
-2. Run the Flask development server:
+1. Run the Flask development server:
     ```bash
     py run.py
     ```
 
-3. Open your browser and navigate to:
+2. Open your browser and navigate to:
     ```
     http://127.0.0.1:5000/
     ```
