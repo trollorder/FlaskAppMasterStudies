@@ -1,23 +1,3 @@
-# Flask App
-
-This is a basic Flask application for IMDB Movies for user studies in a full stack manipulation task
-
-## Requirements
-
-- Python 3.11 ++
-- Flask
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/trollorder/FlaskAppMasterStudies.git
-    ```
-
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ## Running the Application
 
@@ -32,7 +12,7 @@ This is a basic Flask application for IMDB Movies for user studies in a full sta
     ```
 
 
-## Features
+## Feature
 IMDB Main Features
 Movie
 - Top 10 By Genre
@@ -45,6 +25,12 @@ Director
 Admin
 - Add New Movie
 - Manage Movies - Update + Delete
+
+## Tasks To Do
+- Complete the Post Request to add a New Movie into the Database with Data Validation
+- Implement a Manage Movies Tab with a Button to Delete Existing Movies from the Database
+- There are 5000 movies in the database, display it 100 by 100 at one time
+- Ensure the Table can be sorted and filtered 
 
 ## Tests 
 ```bash

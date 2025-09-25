@@ -12,7 +12,7 @@ def register_routes(app,db):
     # Get a Random Movie
     @app.route('/movie', methods=['GET'])
     def movie():
-        movie = Movie.query.order_by(func.random()).first()
+        # movie = Movie.query.order_by(func.random()).first()
         return render_template('movie.html', movie=movie)
 
     # Get 10 Random Movies

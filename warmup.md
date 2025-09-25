@@ -32,7 +32,7 @@ This is a basic Flask application for IMDB Movies for user studies in a full sta
     ```
 
 
-## Features
+## Feature
 IMDB Main Features
 Movie
 - Top 10 By Genre
@@ -45,6 +45,9 @@ Director
 Admin
 - Add New Movie
 - Manage Movies - Update + Delete
+
+## Warm-Up Task to do
+Ensure that the /movies route shows a new random movie. Ensure that the "Get New Movie" Button actually gets a new movie to be displayed.
 
 ## Tests 
 ```bash
