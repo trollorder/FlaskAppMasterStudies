@@ -1,23 +1,3 @@
-# Flask App
-
-This is a basic Flask application for IMDB Movies for user studies in a full stack manipulation task
-
-## Requirements
-
-- Python 3.11 ++
-- Flask
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/trollorder/FlaskAppMasterStudies.git
-    ```
-
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ## Running the Application
 
