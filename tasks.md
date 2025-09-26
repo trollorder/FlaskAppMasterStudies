@@ -29,8 +29,8 @@ Admin
 ## Tasks To Do
 - Complete the Post Request to add a New Movie into the Database with Data Validation
 - Implement a Manage Movies Tab with a Button to Delete Existing Movies from the Database
-- There are 5000 movies in the database, display it 100 by 100 at one time
-- Ensure the Table can be sorted and filtered 
+- There are 5000 movies in the database, display it 100 by 100 at one time, paginated.
+- Ensure the table can be sorted by rating and filtered by name across the entire database.
 
 ## Tests 
 ```bash
