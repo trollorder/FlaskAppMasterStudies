@@ -27,7 +27,7 @@ Admin
 - Manage Movies - Update + Delete
 
 ## Warm-Up Task to do
-Ensure that the /movies route shows a new random movie. Ensure that the "Get New Movie" Button actually gets a new movie to be displayed.
+Ensure that the /movie route shows a new random movie. Ensure that the "Get New Movie" Button actually gets a new movie to be displayed.
 
 ## Tests 
 ```bash
